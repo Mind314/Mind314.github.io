@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><title>Map of /r/europe</title><link rel="stylesheet" href="css/font-awesome.min.css"><link rel="stylesheet" href="css/bootstrap.min.css"><style type="text/css"></style></head><body><center><h3>Geographical distribution of the users on /r/europe since Jan 2015</h3></center><div id="dd44aa03-4d43-4c42-bdf4-27d6414b5476" style="border: none; width: 1500px; height: 800px; position: relative; margin:auto;"></div><div class="clearfix col-lg-10 col-lg-offset-1 alert alert-warning" role="alert">With the help of <a href="http://reddit.com/user/Stuck_In_the_Matrix">/u/Stuck_In_the_Matrix</a> who kindly provided the awesome <a href="https://www.reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_reddit_comment">dataset</a><br /><strong>Definition: </strong>Only users that have made contributions(have commented) have been taken into account. In the past 11 months that is.<br /><br />Country flairs and Flair texts have been taken into account. Users without flairs have not been taken into account. Users with flairs such as "European Union" have been added only if they have included their country of origin, city, region, iso2 or iso3 country code somewhere in the flair title. The rest have been ignored. Users with flairs that do not represent countries but regions or cities have been classified and added to the respective countries: Bavaria > Germany; Naples > Italy. The classification however is automatic so a small number of users has been skipped. These numbers may not be 100% accurate but they are close to the actual numbers.</div><script src="js/d3.min.js"></script><script src="js/topojson.js"></script><script src="js/datamaps.world.js"></script><script type="text/javascript">var notationTitle = "Users"; var series = [["AND",1],["KOR",1],["URY",1],["PHL",2],["SMR",2],["GIB",3],["IDN",3],["CHN",3],["LIE",3],["LBN",3],["ZAF",3],["TUN",3],["VEN",4],["AZE",4],["VNM",4],["GGY",5],["JEY",5],["CUB",6],["GRL",6],["ARG",7],["MNE",11],["IMN",12],["MCO",15],["BRA",15],["ALA",15],["GEO",15],["LUX",16],["BLR",19],["FRO",22],["MEX",22],["JPN",22],["MLT",24],["ARM",26],["MDA",26],["SRB",30],["IND",33],["CYP",34],["NZL",38],["MKD",41],["ISR",45],["BVT",45],["ALB",60],["BIH",62],["SVK",112],["UKR",133],["ISL",133],["LVA",147],["SVN",149],["AUS",170],["TUR",171],["BGR",180],["RUS",187],["HUN",205],["CHE",206],["CZE",224],["LTU",225],["EST",263],["HRV",279],["NOR",327],["AUT",334],["GRC",340],["ITA",347],["CAN",356],["ESP",441],["BEL",443],["PRT",464],["ROU",539],["DNK",556],["FRA",611],["POL",664],["FIN",707],["IRL",727],["SWE",916],["NLD",1096],["USA",1623],["DEU",1624],["GBR",2444]];var dataset={}; var onlyValues = series.map(function(obj){ return obj[1]; }); var minValue = Math.min.apply(null, onlyValues), maxValue = Math.max.apply(null, onlyValues); var paletteScale = d3.scale.linear().domain([minValue,maxValue]).range(["#C2DFFF","#0000A0"]); series.forEach(function(item){var iso = item[0],value = item[1]; dataset[iso] = { notationTitle :value,fillColor:paletteScale(value)};}); new Datamap({data:dataset,projection:'equirectangular',fills:{defaultFill: '#FFFFFF' },element:document.getElementById('dd44aa03-4d43-4c42-bdf4-27d6414b5476'),geographyConfig:{borderColor: '#DEDEDE', highlightBorderWidth: 2 ,highlightFillColor:function(geo){return geo['fillColor']||'#FFFFFF';}, highlightBorderColor: '#FFCC00',popupTemplate:function(geo, data){if(!data){return null;}return '<div class="hoverinfo"><strong>'+geo.properties.name+'</strong><br />'+notationTitle+': <strong>'+data.notationTitle+'</strong></div>';}}});</script></body></html>
+<!--
+***************DEBUG_DATA***************
+----CONFIGURATION
+ OUTPUT:
+  >>> dvizlib.__version__
+  '1.1.11.2'
+  >>> dvizlib.getInstances().save()
+  '
+  The directory structure reddit/europecomments Does not exist. AutoGen:
+   
+      /home/storage/dev/datasets/
+      /home/storage/dev/datasets/reddit
+      /home/storage/dev/datasets/reddit/europecomments
+      /home/storage/dev/datasets/reddit/europecomments/output
+      /home/storage/dev/datasets/reddit/europecomments/output/js
+      /home/storage/dev/datasets/reddit/europecomments/output/css
+  
+  -DONE!
+ LOGGING:
+  >>> logging.getLogger('dvizlib').getEffectiveLevel()
+  40
+ STATUS:
+  -DONE! NO ERRORS FOOL!
+***************END_DEBUG***************
+-->
