@@ -1,0 +1,44 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><link rel="stylesheet" href="css/font-awesome.min.css"><link rel="stylesheet" href="css/bootstrap.min.css"><style>body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;position:relative}.axis text{font:10px sans-serif}.axis path,.axis line{fill:none;stroke:none;shape-rendering:crispEdges}.bar{fill:#2f82ff;fill-opacity:.9}.bar:hover{fill:#19e4ff;fill-opacity:.9}.x.axis path{display:none}.d3-tip{line-height:1;font-weight:700;padding:17px;background:rgba(0,0,0,0.8);color:#fff;border-radius:2px}.d3-tip:after{box-sizing:border-box;display:inline;font-size:10px;width:100%;line-height:1;color:rgba(0,0,0,0.8);content:"\25BC";position:absolute;text-align:center}.d3-tip.n:after{margin:-1px 0 0;top:100%;left:0}.tooltip-clr1{color:#ff7300;}#tsv_container1{display: none !important;}</style><script src="js/d3.v3.min.js"></script><script src="js/d3.tip.v0.6.3.js"></script></head><body><span id="tsv_container1">Country	up1m
+Iceland	406
+Estonia	200
+Ireland	158
+Finland	129
+Denmark	99
+Sweden	95
+Lithuania	77
+Latvia	74
+Slovenia	72
+Croatia	66
+Netherlands	65
+Norway	64
+Portugal	45
+Belgium	39
+Austria	39
+UK	38
+Greece	31
+Luxembourg	29
+Romania	27
+Switzerland	25
+Bulgaria	25
+Czech Rep.	21
+Hungary	21
+Slovakia	21
+Germany	20
+Poland	17
+Spain	10
+France	9
+Italy	6</span><div class="clearfix"></div><div class="col-lg-12"><center><h3>Redditors per 1 million inhabitants: /r/europe (EEA)</h3></center><div id="datacontainer-1"></div><div class="col-lg-10 col-lg-offset-1 alert alert-info">Due to popular demand after my <a href="https://www.reddit.com/r/europe/comments/3um5s3/the_users_of_reurope_xpost_from_rdataisbeautiful/"><strong>post</strong></a> from a few weeks ago, here it is: redditors per 1 million inhabitants. Most of the other countries get somewhere between 0 and 4 per million so they are not in the list this time, sorry. Total population: World Bank 2014.<br /><br /><strong>Iceland?!?!?</strong></div></div></body></html><script>var margin={top:60,right:20,bottom:30,left:15},width=1860-margin.left-margin.right,height=800-margin.top-margin.bottom,x=d3.scale.ordinal().rangeRoundBands([0,width],.1,1),y=d3.scale.linear().range([height,0]),xAxis=d3.svg.axis().scale(x).orient("bottom"),yAxis=d3.svg.axis().scale(y).orient("left").tickFormat(""),svg=d3.select("#datacontainer-1").append("svg").attr("width",width+margin.left+margin.right).attr("height",height+margin.top+margin.bottom).append("g").attr("transform","translate("+margin.left+","+margin.top+")");dt=d3.tsv.parse(document.getElementById("tsv_container1").innerHTML.trim()),dt.forEach(function(t){t.up1m=+t.up1m}),x.domain(dt.map(function(t){return t.Country})),y.domain([0,d3.max(dt,function(t){return t.up1m})]);var tip=d3.tip().attr("class","d3-tip").offset([-10,0]).html(function(t){return'<center><span class="tooltip-clr1">'+t.up1m+"</span></center>"});svg.call(tip),svg.append("g").attr("class","x axis").attr("transform","translate(0,"+height+")").call(xAxis),svg.append("g").attr("class","y axis").call(yAxis).append("text").attr("transform","rotate(-90)").style("text-anchor","end").text("Redditors per 1M inhabitants").style("font-size","15px"),svg.selectAll(".bar").data(dt).enter().append("rect").attr("class","bar").attr("x",function(t){return x(t.Country)}).attr("width",x.rangeBand()).attr("y",function(t){return y(t.up1m)}).attr("height",function(t){return height-y(t.up1m)}).on("mouseover",tip.show).on("mouseout",tip.hide);</script>
+<!--
+***************DEBUG_DATA***************
+----CONFIGURATION
+ OUTPUT:
+  >>> dvizlib.__version__
+  '1.1.11.6'
+  -DONE!
+ LOGGING:
+  >>> logging.getLogger('dvizlib').getEffectiveLevel()
+  50
+ STATUS:
+  -DONE! 0 ERRORS.
+***************END_DEBUG***************
+-->
